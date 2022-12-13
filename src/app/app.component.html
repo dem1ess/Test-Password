@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="form-container">
+    <form [formGroup]="heroForm">
+      <input class="input" placeholder="Введите что-нибудь!" formControlName="password"
+             [type]="hide ? 'password' : 'text'" (input)="change()"/>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <div class="field-container">
+        <div class="first-field" [ngStyle]="{'background': firstField}"></div>
+        <div class="second-field" [ngStyle]="{'background': secondField}"></div>
+        <div class="third-field" [ngStyle]="{'background': thirdField}"></div>
+      </div>
+    </form>
+  </div>
+</div>
